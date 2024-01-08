@@ -21,21 +21,18 @@ export const Events = async (req, res, next) => {
     next(error);
   }
 };
-//to get what user want to send suggestion
-// export const getMyTask = async (req, res, next) => {
-//   try {
-//     const userid = req.user._id;
 
-//     const tasks = await Task.find({ user: userid });
+// get all events
 
-//     res.status(200).json({
-//       success: true,
-//       tasks,
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+export const getEvents = async (req, res, next) => {
+  try {
+    const events = await upcomingEvents.find({});
 
-
-
+    res.status(200).json({
+      success: true,
+      events,
+    });
+  } catch (error) {
+    next(error);
+  }
+}

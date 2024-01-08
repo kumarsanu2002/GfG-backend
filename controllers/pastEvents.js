@@ -22,6 +22,19 @@ export const PASTEVENTS = async (req, res, next) => {
   }
 };
 
+// getting all events
+export const GETPASTEVENTS = async (req, res, next) => {
+  try {
+    const pastevents = await pastEvents.find({});
+
+    res.status(200).json({
+      success: true,
+      pastevents,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 
 

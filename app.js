@@ -1,6 +1,6 @@
 import express from "express";
 import userRouter from "./routes/user.js";
-import taskRouter from "./routes/task.js";
+import taskRouter from "./routes/suggestion.js";
 import eventRouter from "./routes/upcomingEvents.js";
 import pastRouter from "./routes/pastComp.js";
 import contestRouter from "./routes/contest.js";
@@ -10,7 +10,7 @@ import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import cors from "cors";
-
+import dotenv from "dotenv"
 
 
 config({
@@ -18,7 +18,7 @@ config({
 });
 export const app = express();
 
-
+dotenv.config();
 
 // Using Middlewares
 app.use(express.json());
