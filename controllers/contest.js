@@ -21,6 +21,20 @@ export const CONTEST = async (req, res, next) => {
   }
 };
 
+// display all contests
+
+export const displayContests = async (req, res, next) => {
+  try {
+    const contests = await contest.find();
+
+    res.status(200).json({
+      success: true,
+      contests,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
 
 
 

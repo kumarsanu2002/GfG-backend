@@ -1,14 +1,15 @@
 import express from "express";
 import {
-     Events
+     Events, getEvents
 } from "../controllers/upcomingEvents.js";
 import { isAuthenticated } from "../middlewares/auth.js";
 
 const router = express.Router();
-//posting suggestion
+//posting event
 router.post("/new", isAuthenticated, Events);
-//geting suggestion
-// router.get("/my", isAuthenticated, getMyTask);
+
+// get all events
+router.get("/all",getEvents);
 
 
 export default router;

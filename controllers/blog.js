@@ -8,13 +8,13 @@ export const BLOG = async (req, res, next) => {
 
     await blog.create({
       description,
-      user: req.user, //user so thaat we can display it later on
+      user: req.user, //user so that we can display it later on
 
     });
 
     res.status(201).json({
       success: true,
-      message: "Task added Successfully",
+      message: "Blog added Successfully",
     });
   } catch (error) {
     next(error);
@@ -34,7 +34,21 @@ export const MYBLOG = async (req, res, next) => {
     }
   };
   
+// get all blogs
 
+export const ALLBLOGS = async(req,res,next)=>
+{
+    try{
+        const all = await blog.find();
+        res.status(200).json({
+            success:true,
+            all,
+        })
+    }catch(error)
+    {
+        next(error);
+    }
+}
 
 
 

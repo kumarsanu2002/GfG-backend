@@ -19,6 +19,20 @@ export const pastCompt = async (req, res, next) => {
   }
 };
 
+// get all past events
+
+export const getpastCompt = async (req, res, next) => {
+  try {
+    const pastcomp = await pastComp.find({});
+
+    res.status(200).json({
+      success: true,
+      pastcomp,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
 
 
 

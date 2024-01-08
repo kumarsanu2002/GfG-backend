@@ -2,7 +2,7 @@ import express from "express";
 import {
   getMyTask,
   newTask,
-} from "../controllers/task.js";
+} from "../controllers/suggestion.js";
 import { isAuthenticated } from "../middlewares/auth.js";
 
 const router = express.Router();

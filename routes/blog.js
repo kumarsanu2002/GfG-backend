@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  ALLBLOGS,
   BLOG,
   MYBLOG
 } from "../controllers/blog.js";
@@ -11,5 +12,7 @@ router.post("/new", isAuthenticated, BLOG);
 //geting suggestion
 router.get("/my", isAuthenticated, MYBLOG);
 
+// all blogs 
+router.get("/all", ALLBLOGS);
 
 export default router;
